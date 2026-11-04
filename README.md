@@ -2,6 +2,8 @@
 
 Weather temperature and data cleaning
 
+[![CI](https://github.com/QMSS-G5072-2026/weather_huntington_sherry/actions/workflows/ci.yml/badge.svg)](https://github.com/QMSS-G5072-2026/weather_huntington_sherry/actions/workflows/ci.yml)
+
 ## Installation
 
 ```bash
