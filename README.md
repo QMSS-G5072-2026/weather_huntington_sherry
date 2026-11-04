@@ -1,6 +1,6 @@
 # weather_sh4902
 
-Weatherrr temperature and data cleaning
+Weather temperature and data cleaning
 
 ## Installation
 
