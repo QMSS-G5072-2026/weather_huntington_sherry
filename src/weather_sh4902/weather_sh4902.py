@@ -22,6 +22,12 @@ def celsius_to_fahrenheit(celsius: float) -> float:
     Raises:
         TypeError: If `celsius` is not an int or a float.
         ValueError: If `celsius` is below absolute zero (-273.15 C).
+
+    Examples:
+        >>> celsius_to_fahrenheit(20)
+        68.0
+        >>> celsius_to_fahrenheit(0)
+        32.0
     """
     if isinstance(celsius, bool) or not isinstance(celsius, (int, float)):
         raise TypeError("celsius must be a number")
@@ -42,6 +48,13 @@ def summarize_temperatures(temps: list[float]) -> dict[str, float]:
 
     Raises:
         ValueError: If there are no valid (non-missing) readings.
+
+    Examples:
+        >>> summarize_temperatures([10.0, 20.0, 30.0])
+        {'mean': 20.0, 'min': 10.0, 'max': 30.0, 'n_missing': 0}
+
+        >>> summarize_temperatures([15.0, float('nan'), 25.0])
+        {'mean': 20.0, 'min': 15.0, 'max': 25.0, 'n_missing': 1}
     """
     valid = [t for t in temps if not math.isnan(t)]
     if not valid:
@@ -52,7 +65,7 @@ def summarize_temperatures(temps: list[float]) -> dict[str, float]:
         "max": max(valid),
         "n_missing": len(temps) - len(valid),
     }
-
+    
 
 def clean_readings(df: pd.DataFrame) -> pd.DataFrame:
     """
